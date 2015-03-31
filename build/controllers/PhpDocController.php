@@ -379,7 +379,7 @@ class PhpDocController extends Controller
         }
 
         if (!$ref->isSubclassOf('yii\base\Object') && $className != 'yii\base\Object') {
-            $this->stderr("[INFO] Skipping class $className as it is not a subclass of yii\\base\\Object.\n", Console::FG_BLUE, Console::BOLD);
+            $this->stderr("[INFO] Skipping class $className as it is not a subclass of yii\\base\\BaseObject.\n", Console::FG_BLUE, Console::BOLD);
 
             return false;
         }

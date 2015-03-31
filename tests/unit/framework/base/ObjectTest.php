@@ -1,7 +1,7 @@
 <?php
 namespace yiiunit\framework\base;
 
-use yii\base\Object;
+use yii\base\BaseObject;
 use yiiunit\TestCase;
 
 /**
@@ -51,7 +51,7 @@ class ObjectTest extends TestCase
     {
         $this->assertTrue($this->object->canSetProperty('Text'));
         $this->assertTrue($this->object->canSetProperty('text'));
-        $this->assertFalse($this->object->canSetProperty('Object'));
+        $this->assertFalse($this->object->canSetProperty('BaseObject'));
         $this->assertFalse($this->object->canSetProperty('Caption'));
         $this->assertTrue($this->object->canSetProperty('content'));
         $this->assertFalse($this->object->canSetProperty('content', false));
@@ -157,7 +157,7 @@ class ObjectTest extends TestCase
 }
 
 
-class NewObject extends Object
+class NewObject extends BaseObject
 {
     private $_object = null;
     private $_text = 'default';
