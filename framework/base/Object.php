@@ -20,13 +20,10 @@ class Object extends BaseObject
     /**
      *
      */
-    public function __construct()
+    public function __construct($config = [])
     {
+		parent::__construct($config);
         trigger_error(sprintf('"%s" or one of its parents extend yii\\base\\Object. Use yii\\base\\BaseObject to ensure forward compatibility with php 7.x.',
             get_class($this)), E_USER_DEPRECATED);
     }
 }
-
-// Trigger this error here as extending classes might not call parent::__construct while overriding the ctor.
-trigger_error('yii\\base\\Object has been deprecated in favor of yii\\base\\BaseObject to ensure php 7.x forward compatibility.',
-    E_USER_DEPRECATED);
