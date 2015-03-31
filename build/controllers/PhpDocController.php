@@ -378,7 +378,7 @@ class PhpDocController extends Controller
             $this->stderr("[ERR] Unable to create ReflectionClass for class: $className loaded class is not from file: $file\n", Console::FG_RED);
         }
 
-        if (!$ref->isSubclassOf('yii\base\Object') && $className != 'yii\base\Object') {
+        if (!$ref->isSubclassOf('yii\base\BaseObject') && $className != 'yii\base\BaseObject') {
             $this->stderr("[INFO] Skipping class $className as it is not a subclass of yii\\base\\BaseObject.\n", Console::FG_BLUE, Console::BOLD);
 
             return false;
